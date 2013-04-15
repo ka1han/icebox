@@ -1,6 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+'''
+jelly xss
+接口
+http://ice.box/plug/xss/?xss=
+xss.js
+http://ice.box/static/js/xss.js
+'''
+
 from django.shortcuts import render_to_response
 from django.http import Http404
 from django.http import HttpResponse

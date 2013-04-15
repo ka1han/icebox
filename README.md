@@ -9,6 +9,5 @@ icebox sorry
 icebox-sorry 1.1
 优化代码。
 编辑器使用Markdown，推荐用Python版。
-
-
+xss模块命名为jelly xss。
 
