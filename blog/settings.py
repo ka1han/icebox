@@ -1,4 +1,7 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # Django settings for blog project.
+
 
 DEBUG =  False
 TEMPLATE_DEBUG = DEBUG

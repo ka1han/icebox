@@ -1,1 +1,2 @@
-# Create your views here.
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
