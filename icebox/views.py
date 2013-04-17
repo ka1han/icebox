@@ -1,6 +1,3 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
 from django.shortcuts import render_to_response
 from django.http import Http404
 from django.http import HttpResponse
@@ -17,8 +14,9 @@ def blog_list(request):
     blogs = Blog.objects.order_by('-id')
     tags = Tag.objects.all()
     weibos = Weibo.objects.order_by('-publish_time')[:5]
+    audio = Audio.objects.all()
     return render_to_response("blog_list.html",
-        {"blogs": blogs, "tags": tags, "weibos": weibos},
+        {"blogs": blogs, "tags": tags, "weibos": weibos,"audio": audio,},
         context_instance=RequestContext(request))
 
 

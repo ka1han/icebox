@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 ### gravatar.py ###############
 ### place inside a 'templatetags' directory inside the top level of a Django app (not project, must be inside an app)

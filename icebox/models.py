@@ -65,7 +65,9 @@ class Weibo(models.Model):
 
     def __unicode__(self):
         return self.massage
-
+    
+class Audio(models.Model):
+    music = models.CharField(max_length=200)
 
 
 '''

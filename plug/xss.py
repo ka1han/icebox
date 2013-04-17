@@ -7,6 +7,7 @@ jelly xss
 http://ice.box/plug/xss/?xss=
 xss.js
 http://ice.box/static/js/xss.js
+http://ice.box/static/js/x.js
 '''
 
 from django.shortcuts import render_to_response

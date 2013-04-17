@@ -1,7 +1,7 @@
 {% extends "blog_base.html" %}
 {% load comments %}
 
-{% block title %} blog list {% endblock %}
+{% block title %} icebox {% endblock %}
 
 {% block article %}
 <article class='content-main'>
@@ -28,7 +28,8 @@
         </div>            
     <hr>         
     {% endfor %} 
-</article>  
+    </article>  
+    <audio src="{{ audio.0.music }}" autoplay="autoplay">
 {% endblock %}
 
 {% block aside %}
@@ -45,7 +46,7 @@
         <div class="well">
             {% for tag in tags %}
             <span class="label"><a href="{% url filtrblog tag.id %}">{{ tag }}</a></span>
-            {% endfor %}
+	    {% endfor %}
         </div>
-    {% endblock %}
+	{% endblock %}
 {% endblock %}

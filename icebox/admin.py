@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
-from icebox.models import Author, Blog, Tag, Weibo
+from icebox.models import *
 
 
 class AuthorAdmin(admin.ModelAdmin):
@@ -26,3 +26,4 @@ admin.site.register(Author, AuthorAdmin)
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Tag)
 admin.site.register(Weibo)
+admin.site.register(Audio)
