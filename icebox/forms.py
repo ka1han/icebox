@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django import forms
 
 
@@ -15,3 +16,10 @@ class TagForm(forms.Form):
 class WeiboForm(forms.Form):
     """docstring for WeiboForm"""
     massage = forms.CharField(widget=forms.Textarea)
+
+
+class DocumentForm(forms.Form):
+    docfile = forms.FileField(
+        label='Select a file',
+        help_text='max. 42 megabytes'
+    )

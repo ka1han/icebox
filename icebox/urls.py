@@ -2,9 +2,15 @@
 # -*- coding: utf-8 -*-
 
 from django.conf.urls import *
+from django.conf.urls.defaults import patterns, include, url
+from django.conf import settings
+from django.conf.urls.static import static
 
+urlpatterns = patterns('icebox.upload',
+    url(r'^up/$', 'upload', name='upload'),
+)
 
-urlpatterns = patterns(('icebox.views'),   
+urlpatterns += patterns(('icebox.views'),   
     url(r'^$', 'blog_list', name='bloglist'),
     url(r'^blog/tag/(?P<id>\d+)/$', 'blog_filter', name='filtrblog'),
     url(r'^blog/search/$', 'blog_search', name='searchblog'),
