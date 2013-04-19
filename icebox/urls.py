@@ -8,6 +8,7 @@ from django.conf.urls.static import static
 
 urlpatterns = patterns('icebox.upload',
     url(r'^up/$', 'upload', name='upload'),
+    url(r'^up/(?P<id>\w+)/del/$', 'upload_del', name='delup'),
 )
 
 urlpatterns += patterns(('icebox.views'),   

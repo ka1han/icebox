@@ -9,7 +9,6 @@ from icebox.forms import BlogForm
 from icebox.forms import TagForm
 from icebox.models import *
 
-
 def blog_list(request):
     blogs = Blog.objects.order_by('-id')
     tags = Tag.objects.all()
@@ -69,7 +68,7 @@ def blog_del(request, id=""):
         blogs = Blog.objects.all()
         return render_to_response("blog_list.html", {"blogs": blogs})
     else:
-        return render_to_response("404.html")
+        raise Http404
 
 
 def blog_add(request):
@@ -99,7 +98,7 @@ def blog_add(request):
         return render_to_response('blog_add.html',
             {'form': form, 'tag': tag}, context_instance=RequestContext(request))
     else:
-        return render_to_response("404.html")
+        raise Http404
 
 
 def show_weibo(request):
@@ -128,7 +127,7 @@ def add_weibo(request):
         #     {"blogs": blogs, "tags": tags},
         #     context_instance=RequestContext(request))
     else:
-        return render_to_response("404.html")
+        raise Http404
 
 
 def blog_update(request, id=""):
@@ -182,4 +181,4 @@ def blog_update(request, id=""):
             {'blog': blog, 'form': form, 'id': id, 'tag': tag},
             context_instance=RequestContext(request))
     else:
-        return render_to_response("404.html")
+        raise Http404

@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
-
+from django.http import Http404
 from icebox.models import Document
 from icebox.forms import DocumentForm
 
@@ -31,4 +31,19 @@ def upload(request):
             context_instance=RequestContext(request)
         )
     else:
-        return render_to_response("404.html")
+        raise Http404
+
+
+def upload_del(request, id=""):
+    try:
+        docup = Document.objects.get(id=id)
+    except Exception:
+        raise Http404
+    if request.user.is_authenticated():
+        if docup:
+            docup.delete()
+            return HttpResponseRedirect("")
+        documents = Document.objects.all()
+        return render_to_response("upload.html", {"documents": documents})
+    else:
+        raise Http404

